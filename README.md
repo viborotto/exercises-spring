@@ -5,7 +5,7 @@
 
 ## Exercício de Spring Web e Spring Data
 
-## Produto
+## - [ ] Produto
 
 ### POST /produto
 Cria um produto no sistema.
