@@ -9,7 +9,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/produto")
 public class ProdutoController {
 
     @Autowired
@@ -18,7 +17,7 @@ public class ProdutoController {
     @Autowired
     private ProdutoMapper produtoMapper;
 
-    @PostMapping
+    @PostMapping("/produto")
     @ResponseStatus(HttpStatus.CREATED)
     private ProdutoDTO criar(@RequestBody ProdutoDTO dto){
         Produto entity = produtoMapper.fromDtoToEntity(dto);
@@ -26,12 +25,18 @@ public class ProdutoController {
         return produtoMapper.fromEntityToDto(entity);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/produto/{id}")
     @ResponseStatus(HttpStatus.OK)
     private ProdutoDTO produtoPorId(@PathVariable Long id, ProdutoDTO dto){
-        Produto entity = produtoMapper.fromDtoToEntity(dto);
-        entity = produtoService.buscaPorId(id);
+        Produto entity = produtoService.buscaPorId(id);
         return produtoMapper.fromEntityToDto(entity);
     }
+
+    @GetMapping("/produtos")
+    @ResponseStatus(HttpStatus.OK)
+    private Iterable<Produto> listarProdutos(){
+        return produtoService.buscaListaProdutos();
+    }
+
 
 }

@@ -5,6 +5,7 @@ import br.com.mastertech.produtoclienteapi.repository.ProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -21,5 +22,9 @@ public class ProdutoService {
         Optional<Produto> optionalProduto= produtoRepository.findById(id);
 
         return optionalProduto.get();
+    }
+
+    public Iterable<Produto> buscaListaProdutos(){
+         return produtoRepository.findAll();
     }
 }

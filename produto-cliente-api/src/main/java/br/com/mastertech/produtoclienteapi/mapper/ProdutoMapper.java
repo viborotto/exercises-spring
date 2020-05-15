@@ -24,4 +24,13 @@ public class ProdutoMapper {
         dto.setRendimento(entity.getRendimento());
         return dto;
     }
+
+//    public ProdutoDTO fromEntityToDto(Produto entity){
+//        ProdutoDTO dto = new ProdutoDTO();
+//
+//        dto.setId(entity.getId());
+//        dto.setNome(entity.getNome());
+//        dto.setRendimento(entity.getRendimento());
+//        return dto;
+//    }
 }

@@ -1,7 +1,7 @@
 # ToDo Tasks
-- []Produto
-- []Cliente
-- []Aplicação
+- [X] Produto
+- [ ] Cliente
+- [ ] Aplicação
 
 ## Exercício de Spring Web e Spring Data
 
