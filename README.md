@@ -1,2 +1,4 @@
 # exercise-spring
-Produto Cliente, Aplicação
+- [ ]Produto
+- [ ]Cliente
+- [ ]Aplicação
