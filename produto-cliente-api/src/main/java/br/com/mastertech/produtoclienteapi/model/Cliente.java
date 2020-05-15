@@ -1,10 +1,9 @@
 package br.com.mastertech.produtoclienteapi.model;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Cliente {
@@ -16,6 +15,9 @@ public class Cliente {
     private String nome;
 
     private String cpf;
+
+    @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL) //lista de aplicacoes
+    private List<Aplicacao> listaDeAplicacoes = new ArrayList<>();
 
     public Cliente() {
     }
@@ -42,5 +44,13 @@ public class Cliente {
 
     public void setCpf(String cpf) {
         this.cpf = cpf;
+    }
+
+    public List<Aplicacao> getListaDeAplicacoes() {
+        return listaDeAplicacoes;
+    }
+
+    public void setListaDeAplicacoes(List<Aplicacao> listaDeAplicacoes) {
+        this.listaDeAplicacoes = listaDeAplicacoes;
     }
 }
