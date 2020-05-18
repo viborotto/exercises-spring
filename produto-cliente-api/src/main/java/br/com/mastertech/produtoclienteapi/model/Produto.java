@@ -1,9 +1,7 @@
 package br.com.mastertech.produtoclienteapi.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Produto {
@@ -15,6 +13,9 @@ public class Produto {
     private String nome;
 
     private Double rendimento;
+
+    @OneToMany(mappedBy = "produto")
+    private List<Aplicacao> listaDeAplicacoes;
 
     public Produto() {
     }

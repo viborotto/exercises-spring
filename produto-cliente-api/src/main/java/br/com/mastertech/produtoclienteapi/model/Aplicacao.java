@@ -13,10 +13,10 @@ public class Aplicacao {
 
     private Integer meses;
 
-    @OneToOne
+    @ManyToOne
     private Produto produto;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     private Cliente cliente;
 
     public Aplicacao() {

@@ -2,7 +2,6 @@ package br.com.mastertech.produtoclienteapi.model;
 
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -16,8 +15,8 @@ public class Cliente {
 
     private String cpf;
 
-    @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL) //lista de aplicacoes
-    private List<Aplicacao> listaDeAplicacoes = new ArrayList<>();
+    @OneToMany(mappedBy = "cliente")
+    private List<Aplicacao> listaDeAplicacoes;
 
     public Cliente() {
     }
