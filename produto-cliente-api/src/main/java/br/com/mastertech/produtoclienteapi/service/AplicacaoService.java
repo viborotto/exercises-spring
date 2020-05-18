@@ -1,7 +1,9 @@
 package br.com.mastertech.produtoclienteapi.service;
 
 import br.com.mastertech.produtoclienteapi.model.Aplicacao;
+import br.com.mastertech.produtoclienteapi.model.Cliente;
 import br.com.mastertech.produtoclienteapi.repository.AplicacaoRepository;
+import br.com.mastertech.produtoclienteapi.repository.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.Optional;
@@ -12,7 +14,11 @@ public class AplicacaoService {
     @Autowired
     private AplicacaoRepository aplicacaoRepository;
 
-    public Aplicacao aplicar(Aplicacao aplicacao){
+    @Autowired
+    private ClienteRepository clienteRepository;
+
+    public Cliente aplicar(Cliente cliente, Aplicacao aplicacao){
+        cliente.getListaDeAplicacoes().add(aplicacao);
         return aplicacaoRepository.save(aplicacao);
     }
 
@@ -22,7 +28,7 @@ public class AplicacaoService {
         return optionalAplicacao.get();
     }
 
-    public Iterable<Aplicacao> buscaListaAplicacoes(){
-        return aplicacaoRepository.findAll();
+    public Iterable<Aplicacao> buscaListaAplicacoes(Cliente cliente){
+        return cliente.getListaDeAplicacoes();
     }
 }
