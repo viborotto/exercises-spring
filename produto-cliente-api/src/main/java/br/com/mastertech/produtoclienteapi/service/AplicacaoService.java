@@ -17,7 +17,7 @@ public class AplicacaoService {
     @Autowired
     private ClienteRepository clienteRepository;
 
-    public Cliente aplicar(Cliente cliente, Aplicacao aplicacao){
+    public Aplicacao aplicar(Cliente cliente, Aplicacao aplicacao){
         cliente.getListaDeAplicacoes().add(aplicacao);
         return aplicacaoRepository.save(aplicacao);
     }
