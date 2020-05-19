@@ -13,6 +13,7 @@ public class ProdutoMapper {
         entity.setId(dto.getId());
         entity.setNome(dto.getNome());
         entity.setRendimento(dto.getRendimento());
+        entity.setListaDeAplicacoes(dto.getListaDeAplicacoes());
         return entity;
     }
 
@@ -22,6 +23,7 @@ public class ProdutoMapper {
         dto.setId(entity.getId());
         dto.setNome(entity.getNome());
         dto.setRendimento(entity.getRendimento());
+        dto.setListaDeAplicacoes(entity.getListaDeAplicacoes());
         return dto;
     }
 

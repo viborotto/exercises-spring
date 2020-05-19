@@ -15,6 +15,7 @@ public class ClienteMapper {
         entity.setId(dto.getId());
         entity.setNome(dto.getNome());
         entity.setCpf(dto.getCpf());
+        entity.setListaDeAplicacoes(dto.getListaDeAplicacoes());
         return entity;
     }
 
@@ -24,6 +25,7 @@ public class ClienteMapper {
         dto.setId(entity.getId());
         dto.setNome(entity.getNome());
         dto.setCpf(entity.getCpf());
+        dto.setListaDeAplicacoes(entity.getListaDeAplicacoes());
         return dto;
     }
 
