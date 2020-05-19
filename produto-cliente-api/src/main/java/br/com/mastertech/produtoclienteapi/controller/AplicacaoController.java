@@ -16,8 +16,6 @@ public class AplicacaoController {
     @Autowired
     private ClienteService clienteService;
 
-    //id do cliente?
-
     @PostMapping("/cliente/{id}/aplicar")
     public Cliente aplicar(@PathVariable Long id, @RequestBody Aplicacao aplicacao){
         Cliente cliente = clienteService.buscaClientePorId(id);

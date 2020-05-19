@@ -22,12 +22,6 @@ public class AplicacaoService {
         return aplicacaoRepository.save(aplicacao);
     }
 
-    public Aplicacao aplicacaoPorId(Long id){
-        Optional<Aplicacao> optionalAplicacao = aplicacaoRepository.findById(id);
-
-        return optionalAplicacao.get();
-    }
-
     public Iterable<Aplicacao> buscaListaAplicacoes(Cliente cliente){
         return cliente.getListaDeAplicacoes();
     }
