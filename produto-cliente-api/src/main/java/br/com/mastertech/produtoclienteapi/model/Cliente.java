@@ -1,6 +1,8 @@
 package br.com.mastertech.produtoclienteapi.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -15,6 +17,7 @@ public class Cliente {
 
     private String cpf;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "cliente")
     private List<Aplicacao> listaDeAplicacoes;
 

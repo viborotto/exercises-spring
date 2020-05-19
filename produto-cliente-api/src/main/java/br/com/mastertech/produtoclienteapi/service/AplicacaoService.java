@@ -18,7 +18,7 @@ public class AplicacaoService {
     private ClienteRepository clienteRepository;
 
     public Aplicacao aplicar(Cliente cliente, Aplicacao aplicacao){
-        cliente.getListaDeAplicacoes().add(aplicacao);
+        aplicacao.setCliente(cliente);
         return aplicacaoRepository.save(aplicacao);
     }
 

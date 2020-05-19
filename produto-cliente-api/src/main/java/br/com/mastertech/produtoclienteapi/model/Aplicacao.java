@@ -1,5 +1,7 @@
 package br.com.mastertech.produtoclienteapi.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 @Entity
@@ -16,6 +18,7 @@ public class Aplicacao {
     @ManyToOne
     private Produto produto;
 
+    @JsonIgnore
     @ManyToOne
     private Cliente cliente;
 

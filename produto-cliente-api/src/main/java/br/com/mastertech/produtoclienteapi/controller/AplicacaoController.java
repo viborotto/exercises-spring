@@ -17,9 +17,9 @@ public class AplicacaoController {
     private ClienteService clienteService;
 
     @PostMapping("/cliente/{id}/aplicar")
-    public Cliente aplicar(@PathVariable Long id, @RequestBody Aplicacao aplicacao){
+    public Aplicacao aplicar(@PathVariable Long id, @RequestBody Aplicacao aplicacao){
         Cliente cliente = clienteService.buscaClientePorId(id);
-        return aplicacaoService.aplicar(cliente,aplicacao);
+        return aplicacaoService.aplicar(cliente, aplicacao);
     }
 
     @GetMapping("/cliente/{id}/aplicacoes")
