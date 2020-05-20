@@ -1,6 +1,5 @@
 package br.com.mastertech.produtoclienteapi.service;
 
-import br.com.mastertech.produtoclienteapi.mapper.ClienteMapper;
 import br.com.mastertech.produtoclienteapi.model.Cliente;
 import br.com.mastertech.produtoclienteapi.repository.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,8 +28,4 @@ public class ClienteService {
         optionalCliente.get().setNome(cliente.getCpf());
         return clienteRepository.save(optionalCliente.get());
     }
-
-//    public Iterable<Cliente> buscaListaClientes(){
-//        return clienteRepository.findAll();
-//    }
 }

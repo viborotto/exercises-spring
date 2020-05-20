@@ -3,19 +3,14 @@ package br.com.mastertech.produtoclienteapi.service;
 import br.com.mastertech.produtoclienteapi.model.Aplicacao;
 import br.com.mastertech.produtoclienteapi.model.Cliente;
 import br.com.mastertech.produtoclienteapi.repository.AplicacaoRepository;
-import br.com.mastertech.produtoclienteapi.repository.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import java.util.Optional;
 
 @Service
 public class AplicacaoService {
 
     @Autowired
     private AplicacaoRepository aplicacaoRepository;
-
-    @Autowired
-    private ClienteRepository clienteRepository;
 
     public Aplicacao aplicar(Cliente cliente, Aplicacao aplicacao){
         aplicacao.setCliente(cliente);

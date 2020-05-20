@@ -11,10 +11,10 @@ public class AplicacaoMapper {
         Aplicacao entity = new Aplicacao();
 
         entity.setId(dto.getId());
+        entity.setProduto(dto.getProduto());
         entity.setMeses(dto.getMeses());
         entity.setValor(dto.getValor());
-        entity.setCliente(dto.getCliente());
-        entity.setProduto(dto.getProduto());
+
         return entity;
     }
 
@@ -22,10 +22,10 @@ public class AplicacaoMapper {
         AplicacaoDTO dto = new AplicacaoDTO();
 
         dto.setId(entity.getId());
+        dto.setProduto(entity.getProduto());
         dto.setMeses(entity.getMeses());
         dto.setValor(entity.getValor());
-        dto.setCliente(entity.getCliente());
-        dto.setProduto(entity.getProduto());
+
         return dto;
     }
 }
