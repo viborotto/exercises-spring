@@ -17,4 +17,7 @@ public class CargoService {
     }
 
     //inserir
+    public Cargo inserir(Cargo cargo){
+        return cargoRepository.save(cargo);
+    }
 }
