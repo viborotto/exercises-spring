@@ -27,7 +27,7 @@ public class Localizacao {
     @OneToMany(mappedBy = "localizacao")
     private List<Departamento> departamentos;
     @ManyToOne
-    @JoinColumn(name = "country _id")
+    @JoinColumn(name = "country_id")
     private Pais pais;
 
     public Localizacao() {
