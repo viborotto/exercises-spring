@@ -8,7 +8,7 @@
 ## Produto
 
 ### POST /produto
-
+- [X]
 Cria um produto no sistema.
 
 **Request Body**
@@ -33,7 +33,7 @@ Cria um produto no sistema.
 ```
 
 ### GET /produtos
-
+- [X]
 Exibe a lista de produtos no sistema.
 
 **Response 200**
