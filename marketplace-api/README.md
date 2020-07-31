@@ -15,20 +15,20 @@ Cria um produto no sistema.
 
 ```json
 {
-    "nome": "Poupança",
-    "preco": 0.005,
-    "proprietario": "" 
+    "nome": "Adesivo",
+    "preco": 5.0,
+    "proprietario": "null" 
 }
 ```
 
-**Response 200**
+**Response 201**
 
 ```json
 {
     "id": 1,
-    "nome": "Poupança",
-    "preco": 0.005,
-    "proprietario": "" 
+    "nome": "Adesivo",
+    "preco": 5.0,
+    "proprietario": "null" 
 }
 ```
 
@@ -42,21 +42,21 @@ Exibe a lista de produtos no sistema.
 [
     {
         "id": 1,
-        "nome": "Poupança",
+        "nome": "Adesivo",
         "preco": 0.005,
-        "proprietario": "" 
+        "proprietario": "null" 
     },
     {
         "id": 2,
-        "nome": "Poupança",
-        "preco": 0.005,
-        "proprietario": "" 
+        "nome": "Teclado",
+        "preco": 300.00,
+        "proprietario": "null" 
     },
     {
         "id": 3,
-        "nome": "Poupança",
-        "preco": 0.005,
-        "proprietario": "" 
+        "nome": "Relogio",
+        "preco": 150.00,
+        "proprietario": "null" 
     }
 ]
 ```
