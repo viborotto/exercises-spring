@@ -71,7 +71,7 @@ Deleta um produto pelo ID.
 ## Usuario
 
 ### GET /usuario/ {id}
-
+- [X]
 Exibe os dados de um cliente.
 
 **Response 200**
@@ -86,15 +86,15 @@ Exibe os dados de um cliente.
 
 **Response 403**
 
-### POST /cliente
-
+### POST /usuarios
+- [X]
 Cadastra um novo cliente no sistema.
 
 **Request Body**
 
 ```json
 {
-    "nome": "José da Silva",
+    "nome": "Vittoria",
     "email": "vittoria@gmail.com"
 }
 ```
@@ -104,20 +104,20 @@ Cadastra um novo cliente no sistema.
 ```json
 {
     "id": 1,
-    "nome": "José da Silva",
+    "nome": "Vittoria",
     "email": "vittoria@gmail.com"
 }
 ```
 
 ### PUT /cliente/ {id}
-
+- [ ]
 Atualiza os dados de um cliente.
 
 **Request Body**
 
 ```json
 {
-    "nome": "José da Silva",
+    "nome": "Vittoria",
     "email": "vittoria@gmail.com"
 }
 ```
@@ -126,9 +126,10 @@ Atualiza os dados de um cliente.
 
 ```json
 {
-    "nome": "José da Silva",
+    "nome": "Vittoria",
     "email": "vittoria@gmail.com"
 }
 ```
-
-```
+### DELETE /usuarios/{id}
+- [X]
+Deleta um usuario pelo ID.

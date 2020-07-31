@@ -1,8 +1,12 @@
 # Exercicios para treinar API
 
 - [X] marketplace
+- [ ] simple investimento api
+- [ ] funcionarios api
 - [ ] mercado
 - [ ] chocolateando
+- [ ] revisao
+- [ ] cassandra
 - [ ]4
 - [ ] 5
 - [ ] 6
