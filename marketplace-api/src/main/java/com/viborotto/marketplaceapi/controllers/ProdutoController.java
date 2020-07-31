@@ -26,4 +26,10 @@ public class ProdutoController {
     public ResponseEntity<?> getProduto(@PathVariable Long id){
         return ResponseEntity.ok().body(produtoService.produtoPeloId(id));
     }
+
+    @DeleteMapping("/produtos/{id}")
+    public void deleteProduto(@PathVariable Long id){
+        produtoService.deleteProdutoPeloId(id);
+    }
+
 }

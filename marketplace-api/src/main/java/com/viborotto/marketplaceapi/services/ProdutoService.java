@@ -25,4 +25,8 @@ public class ProdutoService {
         Optional<Produto> optionalProduto = produtoRepository.findById(id);
         return optionalProduto.get();
     }
+
+    public void deleteProdutoPeloId(Long id){
+        produtoRepository.deleteById(id);
+    }
 }
