@@ -1,6 +1,6 @@
 # ToDo Tasks
 
-- [ ] Produto
+- [X] Produto
 - [ ] Usuario
 
 ## Exercício de Spring Web e Spring Data
@@ -60,6 +60,13 @@ Exibe a lista de produtos no sistema.
     }
 ]
 ```
+
+### DELETE /produtos/{id}
+- [X]
+Deleta um produto pelo ID.
+
+**Response 200**
+
 
 ## Usuario
 
