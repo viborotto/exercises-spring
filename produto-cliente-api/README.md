@@ -1,6 +1,7 @@
 # ToDo Tasks
-- [ ] Produto
-- [ ] Usuario
+- [X] Produto
+- [ ] Cliente
+- [ ] Aplicação
 
 ## Exercício de Spring Web e Spring Data
 
@@ -13,8 +14,7 @@ Cria um produto no sistema.
 ```json
 {
     "nome": "Poupança",
-    "preco": 0.005,
-    "proprietario": "" 
+    "rendimento": 0.005
 }
 ```
 
@@ -23,8 +23,7 @@ Cria um produto no sistema.
 {
     "id": 1,
     "nome": "Poupança",
-    "preco": 0.005,
-    "proprietario": "" 
+    "rendimento": 0.005
 }
 ```
 
@@ -37,27 +36,24 @@ Exibe a lista de produtos no sistema.
     {
         "id": 1,
         "nome": "Poupança",
-        "preco": 0.005,
-        "proprietario": "" 
+        "rendimento": 0.005
     },
     {
         "id": 2,
-        "nome": "Poupança",
-        "preco": 0.005,
-        "proprietario": "" 
+        "nome": "CDB",
+        "rendimento": 0.007
     },
     {
         "id": 3,
-        "nome": "Poupança",
-        "preco": 0.005,
-        "proprietario": "" 
+        "nome": "Fundos",
+        "rendimento": 0.008
     }
 ]
 ```
 
-## Usuario
+## Cliente
 
-### GET /usuario/{id}
+### GET /cliente/{id}
 Exibe os dados de um cliente.
 
 **Response 200**
@@ -65,7 +61,7 @@ Exibe os dados de um cliente.
 {
     "id": 1,
     "nome": "José da Silva",
-    "email": "vittoria@gmail.com"
+    "cpf": "312.412.534-56",
 }
 ```
 
@@ -78,7 +74,7 @@ Cadastra um novo cliente no sistema.
 ```json
 {
     "nome": "José da Silva",
-    "email": "vittoria@gmail.com"
+    "cpf": "312.412.534-56"
 }
 ```
 
@@ -87,7 +83,7 @@ Cadastra um novo cliente no sistema.
 {
     "id": 1,
     "nome": "José da Silva",
-    "email": "vittoria@gmail.com"
+    "cpf": "312.412.534-56",
 }
 ```
 
@@ -98,15 +94,67 @@ Atualiza os dados de um cliente.
 ```json
 {
     "nome": "José da Silva",
-    "email": "vittoria@gmail.com"
+    "cpf": "312.412.534-56"
 }
 ```
 **Response 200**
 ```json
 {
     "nome": "José da Silva",
-    "email": "vittoria@gmail.com"
+    "cpf": "312.412.534-56",
 }
 ```
 
+
+## Aplicacao
+
+### POST /cliente/{id}/aplicar
+
+**Request Body**
+```json
+{
+    "produto": 1
+    "valor": 10000.00,
+    "meses": 24
+}
+```
+**Response 200**
+```json
+{
+    "id": 1,
+    "produto": {
+        "id": 2,
+        "nome": "CDB",
+        "rendimento": 0.007
+    },
+    "valor": 10000.00,
+    "meses": 24
+}
+```
+
+### GET /cliente/{id}/aplicacoes
+```json
+[
+    {
+        "id": 1,
+        "produto": {
+            "id": 2,
+            "nome": "CDB",
+            "rendimento": 0.007
+        },
+        "valor": 10000.00,
+        "meses": 24
+    },
+    {
+        "id": 1,
+        "produto": {
+            "id": 1,
+            "nome": "Poupança",
+            "rendimento": 0.005
+        },
+        "valor": 1000.00,
+        "meses": 12
+    }
+]
+```
 
