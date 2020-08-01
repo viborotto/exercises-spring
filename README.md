@@ -3,10 +3,10 @@
 - [X] marketplace
 - [X] simple investimento api
 - [ ] funcionarios api
-- [ ] mercado
-- [ ] chocolateando
 - [ ] revisao
 - [ ] cassandra
+- [ ] mercado
+- [ ] chocolateando
 - [ ]4
 - [ ] 5
 - [ ] 6
