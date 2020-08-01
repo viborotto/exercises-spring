@@ -2,7 +2,7 @@
 
 - [X] marketplace
 - [X] simple investimento api
-- [ ] funcionarios api
+- [X] funcionarios api
 - [ ] revisao
 - [ ] cassandra
 - [ ] mercado
