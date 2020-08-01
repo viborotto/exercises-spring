@@ -1,7 +1,7 @@
 # Exercicios para treinar API
 
 - [X] marketplace
-- [ ] simple investimento api
+- [X] simple investimento api
 - [ ] funcionarios api
 - [ ] mercado
 - [ ] chocolateando
