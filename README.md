@@ -4,7 +4,7 @@
 - [X] simple investimento api
 - [X] funcionarios api
 - [ ] revisao-api-investimento
-- [ ] cassandra
+- [X] cassandra
 - [ ] mercado
 - [ ] chocolateando
 - [ ]4
