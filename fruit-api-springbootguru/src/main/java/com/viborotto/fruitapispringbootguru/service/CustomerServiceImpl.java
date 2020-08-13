@@ -1,6 +1,7 @@
 package com.viborotto.fruitapispringbootguru.service;
 
 import com.viborotto.fruitapispringbootguru.controller.CustomerController;
+import com.viborotto.fruitapispringbootguru.exception.ResourceNotFoundException;
 import com.viborotto.fruitapispringbootguru.mapper.CustomerMapper;
 import com.viborotto.fruitapispringbootguru.model.Customer;
 import com.viborotto.fruitapispringbootguru.model.dto.CustomerDTO;
@@ -42,7 +43,12 @@ public class CustomerServiceImpl implements CustomerService{
     public CustomerDTO getCustomerById(Long id) {
         return customerRepository.findById(id)
                 .map(customerMapper::customerToCustomerDTO)
-                .orElseThrow(RuntimeException::new);
+                .map(customerDTO -> {
+                    //set API URL
+                    customerDTO.setCustomerUrl(getCustomerUrl(id));
+                    return customerDTO;
+                })
+                .orElseThrow(ResourceNotFoundException::new);
     }
 
     @Override
@@ -70,7 +76,23 @@ public class CustomerServiceImpl implements CustomerService{
 
     @Override
     public CustomerDTO patchCustomer(Long id, CustomerDTO customerDTO) {
-        return null;
+        return customerRepository.findById(id).map(customer -> {
+
+            if(customerDTO.getFirstname() != null){
+                customer.setFirstname(customerDTO.getFirstname());
+            }
+
+            if(customerDTO.getLastname() != null){
+                customer.setLastname(customerDTO.getLastname());
+            }
+
+            CustomerDTO returnDto = customerMapper.customerToCustomerDTO(customerRepository.save(customer));
+
+            returnDto.setCustomerUrl(getCustomerUrl(id));
+
+            return returnDto;
+
+        }).orElseThrow(ResourceNotFoundException::new);
     }
 
     @Override
