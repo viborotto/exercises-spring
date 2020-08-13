@@ -2,7 +2,10 @@ package com.viborotto.fruitapispringbootguru.bootstrap;
 
 import com.viborotto.fruitapispringbootguru.model.Category;
 import com.viborotto.fruitapispringbootguru.model.Customer;
+import com.viborotto.fruitapispringbootguru.model.Vendor;
 import com.viborotto.fruitapispringbootguru.repositories.CategoryRepository;
+import com.viborotto.fruitapispringbootguru.repositories.CustomerRepository;
+import com.viborotto.fruitapispringbootguru.repositories.VendorRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -12,10 +15,12 @@ public class Bootstrap implements CommandLineRunner{
 
     private final CategoryRepository categoryRespository;
     private final CustomerRepository customerRepository;
+    private final VendorRepository vendorRepository;
 
-    public Bootstrap(CategoryRepository categoryRespository, CustomerRepository customerRepository) {
+    public Bootstrap(CategoryRepository categoryRespository, CustomerRepository customerRepository, VendorRepository vendorRepository) {
         this.categoryRespository = categoryRespository;
         this.customerRepository = customerRepository;
+        this.vendorRepository = vendorRepository;
     }
 
     @Override
@@ -23,6 +28,18 @@ public class Bootstrap implements CommandLineRunner{
 
         loadCategories();
         loadCustomers();
+        loadVendors();
+    }
+
+    private void loadVendors() {
+        Vendor vendor1 = new Vendor();
+        vendor1.setName("Vendor 1");
+        vendorRepository.save(vendor1);
+
+        Vendor vendor2 = new Vendor();
+        vendor2.setName("Vendor 2");
+        vendorRepository.save(vendor2);
+
     }
 
     private void loadCategories() {
