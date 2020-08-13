@@ -1,5 +1,6 @@
 package com.viborotto.fruitapispringbootguru.service;
 
+import com.viborotto.fruitapispringbootguru.controller.CategoryController;
 import com.viborotto.fruitapispringbootguru.mapper.CategoryMapper;
 import com.viborotto.fruitapispringbootguru.model.dto.CategoryDTO;
 import com.viborotto.fruitapispringbootguru.repositories.CategoryRepository;
@@ -30,5 +31,8 @@ public class CategoryServiceImpl implements CategoryService{
     @Override
     public CategoryDTO getCategoryByName(String name) {
         return categoryMapper.categoryToCategoryDTO(categoryRepository.findByName(name));
+    }
+    private String getCategoryURL(Long id) {
+        return CategoryController.BASE_URL + "/" + id;
     }
 }

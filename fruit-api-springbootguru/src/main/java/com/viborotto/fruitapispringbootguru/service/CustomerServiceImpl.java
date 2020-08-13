@@ -1,5 +1,6 @@
 package com.viborotto.fruitapispringbootguru.service;
 
+import com.viborotto.fruitapispringbootguru.controller.CustomerController;
 import com.viborotto.fruitapispringbootguru.mapper.CustomerMapper;
 import com.viborotto.fruitapispringbootguru.model.Customer;
 import com.viborotto.fruitapispringbootguru.model.dto.CustomerDTO;
@@ -27,10 +28,14 @@ public class CustomerServiceImpl implements CustomerService{
                 .stream()
                 .map(customer -> {
                     CustomerDTO customerDTO = customerMapper.customerToCustomerDTO(customer);
-                    customerDTO.setCustomerUrl("/api/v1/customer"+ customer.getId());
+                    customerDTO.setCustomerUrl(getCustomerUrl(customer.getId()));
                     return customerDTO;
                 })
                 .collect(Collectors.toList());
+    }
+
+    private String getCustomerUrl(Long id) {
+        return CustomerController.BASE_URL + "/" + id;
     }
 
     @Override
@@ -50,7 +55,7 @@ public class CustomerServiceImpl implements CustomerService{
 
         CustomerDTO returnDto = customerMapper.customerToCustomerDTO(savedCustomer);
 
-        returnDto.setCustomerUrl("/api/v1/customer/" + savedCustomer.getId());
+        returnDto.setCustomerUrl(getCustomerUrl(savedCustomer.getId()));
 
         return returnDto;
     }
