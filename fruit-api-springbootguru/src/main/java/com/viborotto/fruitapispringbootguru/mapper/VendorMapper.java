@@ -2,6 +2,8 @@ package com.viborotto.fruitapispringbootguru.mapper;
 
 import com.viborotto.fruitapispringbootguru.model.Vendor;
 import com.viborotto.fruitapispringbootguru.model.dto.VendorDTO;
+import org.mapstruct.Mapper;
+import org.mapstruct.factory.Mappers;
 
 @Mapper
 public interface VendorMapper {
